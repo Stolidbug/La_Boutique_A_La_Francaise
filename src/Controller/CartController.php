@@ -23,22 +23,8 @@ class CartController extends AbstractController
      */
     public function index(Cart $cart): Response
     {
-        $cartComplet = [];
-
-        if ($cart->get())
-        {
-            foreach ($cart->get() as $id =>$quantity) {
-                $cartComplet[]= [
-                    'product' => $this->entityManager->getRepository(Product::class)->findOneById($id),
-                    'quantity'=> $quantity
-                ];
-            }
-
-        }
-
-
         return $this->render('cart/index.html.twig', [
-            'cart'=> $cartComplet
+            'cart'=> $cart->getFull()
         ]);
     }
 
