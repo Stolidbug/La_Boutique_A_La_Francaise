@@ -56,6 +56,9 @@
                 {% else %}
                     <a href="{{ path ('app_security_login')}}">Connexion</a> | <a href="{{ path ('app_register_index')}}">Inscription</a>
                 {% endif %}
+                <a href="{{ path ('app_cart_index') }}">
+                    <img src="{{ asset('assets/img/shopping-cart.png') }}" class="cart-icon" alt="Mon panier">
+                </a>
             </div>
 
         </div>
